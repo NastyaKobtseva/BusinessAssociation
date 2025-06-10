@@ -545,62 +545,122 @@ a {
   padding: 30px 0 0;
 }
 
-.answers {
-  background-color: #e6f1ff;
-}
-
-.answers p {
-  color: #000 !important;
-  font-family: "Montserrat", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.2;
-}
-
-.answers-question {
-  background-color: #b9d8ff !important;
-}
-
-.answers-question:hover,
-.answers-question:focus,
-.answers-question:focus-visible {
-  background-color: #b9d8ff !important;
-  box-shadow: none !important;
-}
-
-.answers-question-bg:hover,
-.answers-question-bg:focus,
-.answers-question-bg:focus-visible {
-  background-color: white !important;
-  box-shadow: none !important;
-}
-
 .question {
-  color: black;
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.2;
+  padding: 30px 0 0 0;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #b9d8ff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.faq-container-bg {
+  background-color: #ffffff;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.faq-question {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000000;
+}
+
+.faq-question:hover {
+  color: #343434;
+}
+
+.faq-question .arrow {
+  font-size: 1.2em;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Стилі для відповіді з використанням Grid */
+.faq-answer-wrapper {
+  display: grid;
+  /* Початковий стан: висота 0, приховано */
+  grid-template-rows: 0fr; /* 0fr означає 0 частку від доступного простору, ефективно роблячи висоту 0 */
+  transition: grid-template-rows 0.3s ease-in-out, padding 0.3s ease-in-out;
+  overflow: hidden; /* Важливо для приховування вмісту, що виходить за межі */
+  background-color: #e6f1ff;
+  border-radius: 4px;
+}
+
+.faq-answer {
+  /* Мінімальна висота для контенту, щоб його можна було відобразити */
+  min-height: 0; /* Важливо для гріда, щоб не було зайвого простору */
+  padding: 0 10px; /* Початковий відступ 0, анімуватиметься */
+  color: #000000;
+}
+
+.faq-item.active .faq-answer-wrapper {
+  /* При активному стані: висота auto (1fr), щоб контент займав необхідний простір */
+  grid-template-rows: 1fr; /* 1fr дозволяє контенту зайняти свою природну висоту */
+  padding: 10px; /* Відступ, що анімується */
+}
+
+.faq-item.active .faq-question .arrow {
+  transform: rotate(180deg);
 }
 
 @media (max-width: 991px) {
-  .answers p {
-    font-size: 14px;
-    line-height: 1.4;
+  .mycontainer {
+    max-width: 720px;
+    padding: 0 16px;
   }
-  .question {
-    font-size: 15px;
-    line-height: 1.4;
+  .faq-container h1 { /* Заголовок FAQ */
+    font-size: 1.8em; /* Зменшуємо розмір заголовка */
+  }
+  .faq-question { /* Текст запитання */
+    font-size: 1em; /* Зменшуємо розмір тексту запитання */
+  }
+  .faq-answer p,
+  .faq-answer li { /* Текст відповіді (параграфи та елементи списку) */
+    font-size: 0.9em; /* Зменшуємо розмір тексту відповіді */
   }
 }
+/* Для екранів менше 576px (мобільні пристрої) */
 @media (max-width: 575px) {
-  .answers p {
-    font-size: 13.5px;
-    line-height: 1.5;
+  .mycontainer {
+    max-width: 100%;
+    padding: 0 12px;
   }
-  .question {
-    font-size: 14px;
-    line-height: 1.5;
+  .faq-container h1 {
+    font-size: 1.5em; /* Ще менший заголовок */
+  }
+  .faq-question {
+    font-size: 0.9em; /* Ще менший текст запитання */
+    padding: 8px 0; /* Можливо, трохи зменшити відступи для компактності */
+  }
+  .faq-question .arrow {
+    font-size: 1em; /* Можна зменшити розмір стрілки */
+  }
+  .faq-answer p,
+  .faq-answer li {
+    font-size: 0.85em; /* Ще менший текст відповіді */
+    padding: 0 8px; /* Можливо, трохи зменшити горизонтальні відступи */
+  }
+  .faq-answer-wrapper.active {
+    padding: 8px; /* Зменшити відступ для розгорнутої відповіді */
   }
 }
 .footer {
