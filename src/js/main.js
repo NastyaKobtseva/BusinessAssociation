@@ -3,7 +3,6 @@ const burger = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileMenuLinks = mobileMenu.querySelectorAll("a");
 
-mobileMenu.classList.add("opacity-0", "max-h-0", "overflow-hidden");
 mobileMenu.style.transition = "opacity 0.3s ease-out, max-height 0.3s ease-out";
 
 
