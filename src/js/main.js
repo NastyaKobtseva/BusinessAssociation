@@ -1,9 +1,21 @@
 // burger menu
+// const burger = document.getElementById("burger");
+// const menu = document.getElementById("mobile-menu");
+// burger.addEventListener("click", () => {
+//  menu.classList.toggle("hidden");
+// });
 const burger = document.getElementById("burger");
 const menu = document.getElementById("mobile-menu");
-burger.addEventListener("click", () => {
- menu.classList.toggle("hidden");
+const menuLinks = document.querySelectorAll("#mobile-menu a"); 
 
+burger.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+
+menuLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.add("hidden");
+  });
 });
 
 // show more
