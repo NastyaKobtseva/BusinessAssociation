@@ -61,6 +61,14 @@ a {
   height: 50px;
 }
 
+#mobile-menu {
+  padding: 0;
+}
+
+#mobile-menu-nav {
+  padding: 1rem;
+}
+
 .welcome {
   margin: 54px 0 0 0;
   position: relative;
@@ -785,6 +793,10 @@ a {
     align-items: center;
     text-align: center;
   }
+  .logo-footer__svg svg {
+    width: 32px;
+    height: 32px;
+  }
 }
 @media (max-width: 575px) {
   .footer-copyright {
@@ -810,7 +822,7 @@ a {
     font-size: 13px;
   }
   .logo-footer__svg svg {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
   }
 }/*# sourceMappingURL=main.css.map */
