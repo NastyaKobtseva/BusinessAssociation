@@ -1,9 +1,4 @@
 // burger menu
-// const burger = document.getElementById("burger");
-// const menu = document.getElementById("mobile-menu");
-// burger.addEventListener("click", () => {
-//  menu.classList.toggle("hidden");
-// });
 const burger = document.getElementById("burger");
 const menu = document.getElementById("mobile-menu");
 const menuLinks = document.querySelectorAll("#mobile-menu a"); 
