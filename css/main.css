@@ -700,8 +700,8 @@ a {
 
 .last {
   display: flex;
-  justify-content: center;
-  gap: 278px;
+  gap: 0;
+  justify-content: space-between;
 }
 
 .last__content {
