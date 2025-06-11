@@ -19,13 +19,3 @@
         height: 50px;
     }
 }
-
-#mobile-menu {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-}
-
-#mobile-menu.open {
-  max-height: 500px; /* Досить велика, щоб вміст помістився */
-}
